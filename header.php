@@ -38,15 +38,12 @@
 				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php
 			endif;
-			$fwd_school_description = get_bloginfo( 'description', 'display' );
-			if ( $fwd_school_description || is_customize_preview() ) :
 				?>
-				<p class="site-description"><?php echo $fwd_school_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
+
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'fwd-school' ); ?></button>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php echo get_template_part("./images/menu-icon") ?></button>
 			<?php
 			wp_nav_menu(
 				array(

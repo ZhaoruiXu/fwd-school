@@ -1,0 +1,35 @@
+.site-header {
+  // position: fixed;
+  position: relative;
+  background-color: $color__background-header;
+  height: 55px;
+  width: 100%;
+  border-top: 3px solid #305c9f;
+  top: 0;
+  left: 0;
+  // z-index: 1000;
+  // overflow: hidden;
+  .site-branding {
+    .site-title {
+      margin: 0.4rem 1rem 0 1rem;
+      line-height: $font__line-height-logo;
+      a {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: $color__text-screen;
+        text-decoration: none;
+        text-transform: uppercase;
+        // margin: auto 1rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 50em) {
+  .site-header {
+    display: grid;
+    grid-template-columns: 1fr minmax(auto, 80rem) minmax(auto, 20rem) 1fr;
+    align-items: center;
+    height: auto;
+  }
+}
