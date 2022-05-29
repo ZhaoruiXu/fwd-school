@@ -1,0 +1,21 @@
+.site-footer {
+  padding: 1rem;
+  margin-top: 1.25rem;
+  background-color: $color__background-footer;
+
+  .site-info {
+    color: $color__background-body;
+    text-align: center;
+    p {
+      margin: 0;
+      &:first-child {
+        margin-bottom: 1.5rem;
+      }
+      a {
+        color: $color__background-body;
+        text-decoration: none;
+        font-weight: 600;
+      }
+    }
+  }
+}

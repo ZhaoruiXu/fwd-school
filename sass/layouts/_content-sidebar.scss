@@ -1,27 +1,29 @@
 .site {
-	display: grid;
-	grid-template-columns: auto ($size__site-sidebar);
-	grid-template-areas:
-		"header header"
-		"main sidebar"
-		"footer footer";
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 1000px) 1fr;
+  grid-template-areas:
+    "header header header"
+    ". main ."
+    ". sidebar ."
+    "footer footer footer";
 }
 
 .site-header {
-	grid-area: header;
+  grid-area: header;
 }
 
 .site-main {
-	grid-area: main;
-	overflow: hidden; /* Resolves issue with <pre> elements forcing full width. */
+  grid-area: main;
+  overflow: hidden; /* Resolves issue with <pre> elements forcing full width. */
+  // min-height: 100vh;
 }
 
 .widget-area {
-	grid-area: sidebar;
+  grid-area: sidebar;
 }
 
 .site-footer {
-	grid-area: footer;
+  grid-area: footer;
 }
 
 @import "no-sidebar";

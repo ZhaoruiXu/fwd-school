@@ -19,7 +19,6 @@
         color: $color__text-screen;
         text-decoration: none;
         text-transform: uppercase;
-        // margin: auto 1rem;
       }
     }
   }
@@ -28,8 +27,14 @@
 @media screen and (min-width: 50em) {
   .site-header {
     display: grid;
-    grid-template-columns: 1fr minmax(auto, 80rem) minmax(auto, 20rem) 1fr;
+    grid-template-columns: 1fr minmax(auto, 12.5rem) minmax(auto, 50rem) 1fr;
     align-items: center;
     height: auto;
+    .site-branding {
+      grid-area: 1/2/2/3;
+      .site-title {
+        margin: 0.4rem 0 0 0;
+      }
+    }
   }
 }
