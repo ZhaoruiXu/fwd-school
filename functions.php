@@ -176,3 +176,35 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Blog Post Ascending Order by Title 
+ */
+// function order_posts_by_title( $query ) { 
+
+//    if ( $query->is_home() && $query->is_main_query() ) { 
+
+//      $query->set( 'orderby', 'title' ); 
+
+//      $query->set( 'order', 'ASC' ); 
+
+//    } 
+
+// } 
+
+// add_action( 'pre_get_posts', 'order_posts_by_title' );
+
+// Change the excerpt length
+// function fwd_excerpt_length( $length ) {
+// 	// filter always do a return statement
+// 	return 20;
+// }
+// // 999 means runs later (higher number will apply)
+// add_filter('excerpt_length', 'fwd_excerpt_length', 999);
+
+// Change the excerpt endings 
+function fwd_excerpt_more( $more ) {
+	$more = '... <a href="'. get_permalink() . '" class="read-more">Continue Reading</a>';
+
+	return $more;
+}
+add_filter('excerpt_more', 'fwd_excerpt_more');
