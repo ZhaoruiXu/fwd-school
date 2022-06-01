@@ -9,7 +9,7 @@
   left: 0;
   .site-branding {
     .site-title {
-      margin: 0.4rem 1rem 0 1rem;
+      margin: 0.5rem 1rem;
       line-height: $font__line-height-logo;
       a {
         font-size: 1.3rem;
@@ -30,9 +30,6 @@
     height: auto;
     .site-branding {
       grid-area: 1/2/2/3;
-      .site-title {
-        margin: 0.4rem 0 0 0;
-      }
     }
   }
 }

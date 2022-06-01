@@ -1,8 +1,38 @@
-.widget {
-	margin: 0 0 1.5em;
+.widget-area {
+  align-items: flex-start;
+  .widget {
+    margin: 0 0 1.5em;
 
-	// Make sure select elements fit in widgets.
-	select {
-		max-width: 100%;
-	}
+    form {
+      .wp-block-search__inside-wrapper {
+        flex-direction: column;
+        .wp-block-search__button {
+          color: #ffffff;
+          background-color: #305c9f;
+          width: 100%;
+          margin: 0;
+          padding: 0.75rem;
+        }
+      }
+    }
+
+    .wp-block-group {
+      .wp-block-group__inner-container {
+        ul {
+          margin: 0;
+        }
+      }
+    }
+
+    a {
+      color: #003c71;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    // Make sure select elements fit in widgets.
+    select {
+      max-width: 100%;
+    }
+  }
 }

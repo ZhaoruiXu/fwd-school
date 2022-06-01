@@ -26,4 +26,13 @@
   grid-area: footer;
 }
 
+@media (min-width: 50em) {
+  .widget-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // gap: 2rem;
+  }
+}
+
 @import "no-sidebar";
