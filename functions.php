@@ -99,6 +99,7 @@ function fwd_school_setup() {
 			'flex-height' => true,
 		)
 	);
+	add_theme_support( 'align-wide' );
 }
 add_action( 'after_setup_theme', 'fwd_school_setup' );
 

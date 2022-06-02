@@ -1,0 +1,65 @@
+.page-id-52 {
+  .site-main {
+    .entry-content {
+      .schedule-table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        margin-top: 4rem;
+        thead {
+          background-color: #eeeeee;
+          tr {
+            display: block;
+            padding: 1rem;
+            th {
+              display: block;
+              text-align: left;
+            }
+          }
+        }
+        tbody {
+          tr {
+            display: block;
+            padding: 1rem;
+            td {
+              display: block;
+            }
+            &:nth-child(even) {
+              background-color: #eeeeee;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 30rem) {
+  .page-id-52 {
+    .site-main {
+      .entry-content {
+        .schedule-table {
+          thead {
+            tr {
+              display: table-row;
+              padding: 0;
+              th {
+                display: table-cell;
+                padding: 2rem 1rem;
+              }
+            }
+          }
+          tbody {
+            tr {
+              display: table-row;
+              padding: 0;
+              td {
+                display: table-cell;
+                padding: 2rem 1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

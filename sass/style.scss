@@ -100,3 +100,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /* Alignments
 --------------------------------------------- */
 @import "utilities/alignments";
+
+/* Pages
+--------------------------------------------- */
+@import "pages/home.scss";
+@import "pages/students.scss";
+@import "pages/schedule.scss";
+@import "pages/staff.scss";

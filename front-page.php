@@ -24,6 +24,8 @@ get_header();
 
 			<h1><?php the_title() ?></h1>
 
+      <?php the_content(); ?>
+       
 			<!-- <section class="home-info">
 				<?php 
 					// load the intro section from a seperate page using WP_Query
@@ -206,6 +208,9 @@ get_header();
 						</article>
 					<?php 
 					endwhile;
+          ?>
+            <a href="<?php echo get_post_type_archive_link($args["post_type"]); ?>">See All News</a>
+          <?php 
 							wp_reset_postdata();
 				endif;	
 					?>
