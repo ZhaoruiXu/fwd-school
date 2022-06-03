@@ -23,6 +23,11 @@
             font-weight: 700;
             margin-top: 0.25rem;
           }
+          &:last-child {
+            a {
+              display: inline;
+            }
+          }
         }
       }
     }

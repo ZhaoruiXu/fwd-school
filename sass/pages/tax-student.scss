@@ -1,0 +1,38 @@
+.tax-fwd-student-category {
+  .site-main {
+    h1 {
+      font-size: 2rem;
+      font-weight: 500;
+    }
+    article {
+      h2 {
+        a {
+          text-decoration: none;
+          color: #003c71;
+        }
+        &:hover a,
+        &:focus a {
+          color: #305c9f;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 48em) {
+  .tax-fwd-student-category {
+    .site-main {
+      h1 {
+        font-size: 2.5rem;
+      }
+      article {
+        h2 {
+          a {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+  }
+}

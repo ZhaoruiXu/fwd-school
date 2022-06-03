@@ -45,7 +45,7 @@ get_header();
             <?php $terms = wp_get_post_terms( $query->post->ID, "fwd-student-category" ); ?>
             <?php foreach ( $terms as $term ) : ?>
             <!-- <p><?php echo $term->taxonomy; ?>: <?php echo $term->name; ?></p> -->
-            <p>Specialty: <?php echo $term->name; ?></p>
+            <p>Specialty: <a href="<?php echo get_term_link($term->name, $term->taxonomy) ?>"><?php echo $term->name; ?></a></p>
             <?php endforeach; 
 
 					echo '</article>';
