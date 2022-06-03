@@ -200,17 +200,22 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 // add_action( 'pre_get_posts', 'order_posts_by_title' );
 
 // Change the excerpt length
-// function fwd_excerpt_length( $length ) {
-// 	// filter always do a return statement
-// 	return 20;
-// }
-// // 999 means runs later (higher number will apply)
-// add_filter('excerpt_length', 'fwd_excerpt_length', 999);
+function fwd_excerpt_length( $length ) {
+	// filter always do a return statement
+	if('fwd-student' == get_post_type()){
+		return 25;
+	} else{
+		return 55;
+	}
+}
+// 999 means runs later (higher number will apply)
+add_filter('excerpt_length', 'fwd_excerpt_length', 999);
 
 // Change the excerpt endings 
 function fwd_excerpt_more( $more ) {
-	$more = '... <a href="'. get_permalink() . '" class="read-more">Continue Reading</a>';
-
+	if('fwd-student' == get_post_type()){
+		$more = '<a href="'. get_permalink() . '" class="read-more"> Read more about the student…</a>';
+	} 
 	return $more;
 }
 add_filter('excerpt_more', 'fwd_excerpt_more');
