@@ -1,7 +1,28 @@
 .comment-content a {
-	word-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .bypostauthor {
-	display: block;
+  display: block;
+}
+
+.comments-area {
+  .comment-form {
+    .logged-in-as {
+      a {
+        color: #003c71;
+        text-decoration: none;
+        font-weight: 700;
+      }
+    }
+    .form-submit {
+      input {
+        color: #ffffff;
+        background-color: #305c9f;
+        width: 100%;
+        margin: 0;
+        padding: 0.75rem;
+      }
+    }
+  }
 }

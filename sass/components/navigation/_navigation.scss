@@ -117,10 +117,20 @@
 
   .nav-previous {
     flex: 1 0 50%;
+    a {
+      color: #003c71;
+      text-decoration: none;
+      font-weight: 700;
+    }
   }
 
   .nav-next {
     text-align: end;
     flex: 1 0 50%;
+    a {
+      color: #003c71;
+      text-decoration: none;
+      font-weight: 700;
+    }
   }
 }

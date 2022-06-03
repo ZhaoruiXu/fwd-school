@@ -25,34 +25,44 @@
               );
               ?>
 
-              <h2><?php echo $term->name; ?></h2>
-              
-              <?php  
-              $staff_query = new WP_Query($args);
-              if($staff_query -> have_posts()){
-                while($staff_query -> have_posts()){
-                $staff_query -> the_post();
-                
-                  echo '<article id="' . get_the_ID() . '">';
-                      echo '<h3>' . get_the_title() . '</h3>';
+              <section class="staff-wrapper">
 
-                      if ( function_exists ( 'get_field' ) ) {
-        
-                        if ( get_field( 'staff_bio' ) ) {
-                            the_field( 'staff_bio' );
-                        }
-                        if ( get_field( 'staff_teaching_courses' ) ) {
-                            the_field( 'staff_teaching_courses' );
-                        }
-                        if ( get_field( 'staff_website' ) ) {
-                            the_field( 'staff_website' );
-                        }
-                        
-                      } 
-                  echo '</article>';
+                <h2><?php echo $term->name; ?></h2>
+                
+                <?php  
+                $staff_query = new WP_Query($args);
+                if($staff_query -> have_posts()){
+                  while($staff_query -> have_posts()){
+                  $staff_query -> the_post();
+                  
+                    echo '<article id="' . get_the_ID() . '">';
+                        echo '<h3>' . get_the_title() . '</h3>';
+
+                        if ( function_exists ( 'get_field' ) ) {
+          
+                          if ( get_field( 'staff_bio' ) ) {
+                          ?>
+                              <p><?php the_field( 'staff_bio' ) ?></p>
+                          <?php  
+                          }
+                          if ( get_field( 'staff_teaching_courses' ) ) {
+                          ?>
+                              <p>Courses: <?php the_field( 'staff_teaching_courses' )?></p>
+                          <?php
+                          }
+                          if ( get_field( 'staff_website' ) ) {
+                          ?>
+                              <a href="<?php the_field( 'staff_website' ) ?>">Instructor Website</a>
+                          <?php 
+                          }
+                        } 
+                    echo '</article>';
+                  }
+                  wp_reset_postdata();
                 }
-                wp_reset_postdata();
-              }
+                ?>
+              </section>
+              <?php 
             endforeach;
 					?>
 			<?php endif; 

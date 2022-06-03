@@ -1,5 +1,6 @@
 .widget-area {
   align-items: flex-start;
+  margin: 3rem 0;
   .widget {
     margin: 0 0 1.5em;
 
@@ -19,7 +20,7 @@
     .wp-block-group {
       .wp-block-group__inner-container {
         ul {
-          margin: 0;
+          list-style: unset;
         }
       }
     }

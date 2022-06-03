@@ -1,0 +1,40 @@
+.page-id-50 {
+  .site-main {
+    .staff-wrapper {
+      margin-bottom: 2rem;
+      h2 {
+        width: 100%;
+        margin: 0;
+        font-size: 2rem;
+        text-decoration: underline;
+      }
+      article {
+        h3 {
+          font-size: 1.5rem;
+        }
+        a {
+          text-decoration: none;
+          font-weight: 700;
+          color: #003c71;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 37.5em) {
+  .page-id-50 {
+    .site-main {
+      .staff-wrapper {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 2rem;
+        article {
+          width: 48%;
+        }
+      }
+    }
+  }
+}
