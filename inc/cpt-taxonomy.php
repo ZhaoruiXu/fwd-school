@@ -49,22 +49,22 @@
 
 // ----------------------------------------------------------------
 
-    // Register Services CPT
+    // Register Students CPT
     $labels = array(
-    'name'               => _x( 'Services', 'post type general name'  ),
-    'singular_name'      => _x( 'Service', 'post type singular name'  ),
-    'menu_name'          => _x( 'Services', 'admin menu'  ),
-    'name_admin_bar'     => _x( 'Service', 'add new on admin bar' ),
-    'add_new'            => _x( 'Add New', 'service' ),
-    'add_new_item'       => __( 'Add New Service' ),
-    'new_item'           => __( 'New Service' ),
-    'edit_item'          => __( 'Edit Service' ),
-    'view_item'          => __( 'View Service'  ),
-    'all_items'          => __( 'All Services' ),
-    'search_items'       => __( 'Search Services' ),
-    'parent_item_colon'  => __( 'Parent Services:' ),
-    'not_found'          => __( 'No services found.' ),
-    'not_found_in_trash' => __( 'No services found in Trash.' ),
+    'name'               => _x( 'Students', 'post type general name'  ),
+    'singular_name'      => _x( 'Student', 'post type singular name'  ),
+    'menu_name'          => _x( 'Students', 'admin menu'  ),
+    'name_admin_bar'     => _x( 'Student', 'add new on admin bar' ),
+    'add_new'            => _x( 'Add New', 'student' ),
+    'add_new_item'       => __( 'Add New Student' ),
+    'new_item'           => __( 'New Student' ),
+    'edit_item'          => __( 'Edit Student' ),
+    'view_item'          => __( 'View Student'  ),
+    'all_items'          => __( 'All Students' ),
+    'search_items'       => __( 'Search Students' ),
+    'parent_item_colon'  => __( 'Parent Students:' ),
+    'not_found'          => __( 'No Students found.' ),
+    'not_found_in_trash' => __( 'No Students found in Trash.' ),
     );
 
     $args = array(
@@ -75,68 +75,22 @@
         'show_in_menu'       => true,
         'show_in_rest'       => true, // Must be true to use block editor template set, as WordPress Block Editor is a React.js app that uses the WordPress REST AP
         'query_var'          => true,
-        'rewrite'            => array( 'slug' => 'services' ),
-        'capability_type'    => 'post',
-        'has_archive'        => false,
-        'hierarchical'       => false,
-        'menu_position'      => 7,
-        'menu_icon'          => 'dashicons-admin-comments',
-        'supports'           => array( 'title' ),
-    );
-
-    register_post_type( 'fwd-service', $args );
-
-// ----------------------------------------------------------------
-
-    // Register Job Postings CPT
-    $labels = array(
-        'name'                  => _x( 'Job Postings', 'post type general name' ),
-        'singular_name'         => _x( 'Job Posting', 'post type singular name' ),
-        'menu_name'             => _x( 'Job Postings', 'admin menu' ),
-        'name_admin_bar'        => _x( 'Job Posting', 'add new on admin bar' ),
-        'add_new'               => _x( 'Add New', 'service'  ),
-        'add_new_item'          => __( 'Add New Job Posting'  ),
-        'new_item'              => __( 'New Job Posting' ),
-        'edit_item'             => __( 'Edit Job Posting' ),
-        'view_item'             => __( 'View Job Posting' ),
-        'all_items'             => __( 'All Job Postings'  ),
-        'search_items'          => __( 'Search Job Postings' ),
-        'parent_item_colon'     => __( 'Parent Job Postings:' ),
-        'not_found'             => __( 'No Job Postings found.' ),
-        'not_found_in_trash'    => __( 'No Job Postings found in Trash.' ),
-        'insert_into_item'      => __( 'Insert into Job Posting'),
-        'uploaded_to_this_item' => __( 'Uploaded to this Job Posting'),
-    );
-    $args = array(
-        'labels'             => $labels,
-        'public'             => true,
-        'publicly_queryable' => true,
-        'show_ui'            => true,
-        'show_in_menu'       => true,
-        'show_in_rest'       => true,
-        'query_var'          => true,
-        'rewrite'            => array( 'slug' => 'careers' ),
+        'rewrite'            => array( 'slug' => 'students' ),
         'capability_type'    => 'post',
         'has_archive'        => true,
         'hierarchical'       => false,
-        'menu_position'      => 21,
-        'menu_icon'          => 'dashicons-megaphone',
-        'supports'           => array( 'title', 'editor' ),
+        'menu_position'      => 7,
+        'menu_icon'          => 'dashicons-groups',
+        'supports'           => array( 'title', 'editor', 'thumbnail' ),
         // for using block template
         'template'           => array(
-            array( 'core/heading', array( 'level' => '3', 'content' => 'Role', ) ),
-            array( 'core/paragraph', array( 'placeholder' => 'Describe the role...' ) ),
-            array( 'core/heading', array( 'level' => '3', 'content' => 'Requirements' ) ),
-            array( 'core/list' ),
-            array( 'core/heading', array( 'level' => '3', 'content' => 'Location' ) ),
-            array( 'core/paragraph' ),
-            array( 'core/heading', array( 'level' => '3', 'content' => 'How to Apply' ) ),
-            array( 'core/paragraph' ),
+            array( 'core/paragraph', array( 'placeholder' => 'Short biography...' ) ),
+            array( 'core/button' ),
         ),
         'template_lock' => 'all',
     );
 
-    register_post_type( 'fwd-job-posting', $args );
+    register_post_type( 'fwd-student', $args );
 
 }
 add_action( 'init', 'fwd_register_custom_post_types' );
@@ -177,48 +131,20 @@ function fwd_register_taxonomies() {
     register_taxonomy( 'fwd-staff-category', array( 'fwd-staff' ), $args );
 }
 
-  // -----------------------------------------------------------
-  // Add Featured taxonomy
-  $labels = array(
-      'name'              => _x( 'Featured', 'taxonomy general name' ),
-      'singular_name'     => _x( 'Featured', 'taxonomy singular name' ),
-      'search_items'      => __( 'Search Featured' ),
-      'all_items'         => __( 'All Featured' ),
-      'parent_item'       => __( 'Parent Featured' ),
-      'parent_item_colon' => __( 'Parent Featured:' ),
-      'edit_item'         => __( 'Edit Featured' ),
-      'update_item'       => __( 'Update Featured' ),
-      'add_new_item'      => __( 'Add New Featured' ),
-      'new_item_name'     => __( 'New Work Featured' ),
-      'menu_name'         => __( 'Featured' ),
-  );
-
-  $args = array(
-      'hierarchical'      => true,
-      'labels'            => $labels,
-      'show_ui'           => true,
-      'show_admin_column' => true,
-      'show_in_rest'      => true,
-      'query_var'         => true,
-      'rewrite'           => array( 'slug' => 'featured' ),
-  );
-
-  register_taxonomy( 'fwd-featured', array( 'fwd-work' ), $args );
-
   // ----------------------------------------------------------------
-  // Add Service Type taxonomy
+  // Add Student Category taxonomy
   $labels = array(
-      'name'              => _x( 'Service Types', 'taxonomy general name' ),
-      'singular_name'     => _x( 'Service Type', 'taxonomy singular name' ),
-      'search_items'      => __( 'Search Service Types' ),
-      'all_items'         => __( 'All Service Type' ),
-      'parent_item'       => __( 'Parent Service Type' ),
-      'parent_item_colon' => __( 'Parent Service Type:' ),
-      'edit_item'         => __( 'Edit Service Type' ),
-      'update_item'       => __( 'Update Service Type' ),
-      'add_new_item'      => __( 'Add New Service Type'),
-      'new_item_name'     => __( 'New Work Service Type' ),
-      'menu_name'         => __( 'Service Type' ),
+      'name'              => _x( 'Student Categories', 'taxonomy general name' ),
+      'singular_name'     => _x( 'Student Category', 'taxonomy singular name' ),
+      'search_items'      => __( 'Search Student Categories' ),
+      'all_items'         => __( 'All Student Category' ),
+      'parent_item'       => __( 'Parent Student Category' ),
+      'parent_item_colon' => __( 'Parent Student Category:' ),
+      'edit_item'         => __( 'Edit Student Category' ),
+      'update_item'       => __( 'Update Student Category' ),
+      'add_new_item'      => __( 'Add New Student Category'),
+      'new_item_name'     => __( 'New Work Student Category' ),
+      'menu_name'         => __( 'Student Category' ),
   );
 
   $args = array(
@@ -228,10 +154,10 @@ function fwd_register_taxonomies() {
       'show_admin_column' => true,
       'show_in_rest'      => true,
       'query_var'         => true,
-      'rewrite'           => array( 'slug' => 'service-types' ),
+      'rewrite'           => array( 'slug' => 'student-categories' ),
   );
 
-  register_taxonomy( 'fwd-service-type', array( 'fwd-service' ), $args );
+  register_taxonomy( 'fwd-student-category', array( 'fwd-student' ), $args );
 
 add_action( 'init', 'fwd_register_taxonomies');
 
