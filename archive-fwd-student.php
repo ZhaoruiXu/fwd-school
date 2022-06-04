@@ -17,7 +17,6 @@ get_header();
 				<!-- <h1><?php post_type_archive_title(); ?></h1> -->
 				<h1>The Class</h1>
 
-
 				<?php
 				// the_archive_title( '<h1 class="page-title">', '</h1>' );
 				the_archive_description( '<div class="archive-description">', '</div>' );
@@ -37,8 +36,10 @@ get_header();
 				while ($query -> have_posts()){
 					$query -> the_post();
 					echo '<article>';
-							echo '<h2>' . get_the_title() . '</h2>';
-							the_post_thumbnail('large');
+          ?>
+              <h2><a href="<?php the_permalink()?>"><?php the_title() ?></a></h2>
+          <?php  
+						the_post_thumbnail('large');
 						the_excerpt();
             ?>
 

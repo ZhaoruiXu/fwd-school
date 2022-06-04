@@ -48,6 +48,7 @@ function fwd_school_setup() {
 
 	// Custom image crop sizes
 	add_image_size("student-portrait", 200, 300, true);
+	add_image_size("student-portrait-large", 277, 300, true);
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(

@@ -5,9 +5,15 @@
         max-width: 300px;
         margin: 0 auto;
         h2 {
-          color: #003c71;
-          text-decoration: none;
-          font-weight: 700;
+          a {
+            color: #003c71;
+            text-decoration: none;
+            font-weight: 700;
+            &:hover,
+            &:focus {
+              text-decoration: underline;
+            }
+          }
         }
         img {
           width: 300px;
@@ -22,6 +28,10 @@
             text-decoration: none;
             font-weight: 700;
             margin-top: 0.25rem;
+            &:hover,
+            &:focus {
+              text-decoration: underline;
+            }
           }
           &:last-child {
             a {
